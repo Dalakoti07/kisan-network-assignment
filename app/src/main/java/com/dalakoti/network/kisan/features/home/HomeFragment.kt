@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ViewPageAdapter(fragmentManager = parentFragmentManager, lifecycle = lifecycle)
+        val adapter = ViewPageAdapter(fragmentManager = childFragmentManager, lifecycle = lifecycle)
         binding.viewPager.adapter = adapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager){ tab, position->

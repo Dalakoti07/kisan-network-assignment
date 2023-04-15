@@ -5,16 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.dalakoti.network.kisan.R
-import com.dalakoti.network.kisan.databinding.FragmentSecondBinding
+import com.dalakoti.network.core.data.models.Contact
+import com.dalakoti.network.kisan.databinding.FragmentComposeSmsBinding
+import com.dalakoti.network.kisan.utils.loadImageByUrl
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class ComposeSmsFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentComposeSmsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,16 +25,22 @@ class ComposeSmsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentComposeSmsBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        arguments?.getSerializable("contact")?.let {
+            (it as? Contact)?.let {contact->
+                // set Data
+                binding.appBar.title = contact.name
+                binding.tvDesignation.text = contact.designation
+                binding.icAvatar.loadImageByUrl(contact.avatar)
+                binding.tvPhoneNumber.text = contact.phoneNumber
+                binding.tvAddress.text = contact.address
+            }
         }
     }
 
