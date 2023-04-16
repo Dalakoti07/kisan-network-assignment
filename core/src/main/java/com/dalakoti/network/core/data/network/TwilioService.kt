@@ -1,5 +1,6 @@
 package com.dalakoti.network.core.data.network
 
+import com.dalakoti.network.core.data.network.responses.SendSmsResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -14,6 +15,6 @@ interface TwilioService {
         @Field("To") to: String,
         @Field("From") from: String,
         @Field("Body") body: String,
-    ): Response<Unit>
+    ): Response<SendSmsResponse>
 
 }

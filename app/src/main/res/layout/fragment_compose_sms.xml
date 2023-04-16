@@ -84,8 +84,6 @@
         tools:text="+91 9643957240" />
 
     <EditText
-        android:textCursorDrawable="@null"
-        android:textColor="@color/purple_700"
         android:gravity="top|start"
         android:id="@+id/et_message"
         android:layout_width="0dp"
@@ -111,5 +109,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/et_message" />
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/progress_circular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

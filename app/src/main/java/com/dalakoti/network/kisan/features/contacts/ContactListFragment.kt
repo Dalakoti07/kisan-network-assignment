@@ -46,7 +46,7 @@ class ContactListFragment : Fragment() {
                     designation = "Software Engineer",
                     address = "Gurgaon, Haryana, India, Asia",
                     avatar = "https://avatars.githubusercontent.com/u/38468299?v=4",
-                    phoneNumber = "9643957240"
+                    phoneNumber = "+919643957240"
                 ),
                 Contact(
                     id = 2,
@@ -54,7 +54,7 @@ class ContactListFragment : Fragment() {
                     designation = "Software Engineer",
                     address = "Seattle, USA, America",
                     avatar = "https://avatars.githubusercontent.com/u/25940948?v=4",
-                    phoneNumber = "9643957240"
+                    phoneNumber = "+919643957240"
                 ),
                 Contact(
                     id = 3,
@@ -62,7 +62,7 @@ class ContactListFragment : Fragment() {
                     designation = "Remote Engineer",
                     address = "Earth",
                     avatar = "https://avatars.githubusercontent.com/u/8079861?v=4",
-                    phoneNumber = "9643957240"
+                    phoneNumber = "+919643957240"
                 ),
             )
         )
