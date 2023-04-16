@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SmsSentDao {
 
-    @Query("SELECT * FROM sms_sent")
+    @Query("SELECT * FROM sms_sent order by uid desc")
     fun getAllSentSms(): Flow<List<SmsSentEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
