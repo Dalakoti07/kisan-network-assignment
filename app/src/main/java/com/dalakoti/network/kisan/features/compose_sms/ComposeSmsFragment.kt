@@ -38,7 +38,7 @@ class ComposeSmsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentComposeSmsBinding.inflate(inflater, container, false)
         return binding.root
@@ -63,7 +63,8 @@ class ComposeSmsFragment : Fragment() {
             if (::personContact.isInitialized) {
                 viewModel.sendSms(
                     to = personContact.phoneNumber,
-                    body = binding.etMessage.text.toString()
+                    body = binding.etMessage.text.toString(),
+                    person = personContact,
                 )
             }
         }

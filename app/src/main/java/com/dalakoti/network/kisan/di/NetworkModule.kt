@@ -18,12 +18,10 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 //private const val BASE_URL = "https://api.twilio.com/2010-04-01/Accounts/AC4cc294ece32388686d83aa35f9730ed0/"
-private const val BASE_URL = "https://api.twilio.com/2010-04-01/Accounts/Ac/"
+private const val BASE_URL = "https://api.twilio.com/2010-04-01/Accounts/AC4cc294ece32388686d83aa35f9730ed0/"
 
 fun createOkHttpClient(): OkHttpClient {
     // todo clean this and put fields in build config
-    // val base64Val = "AC4cc294ece32388686d83aa35f9730ed0:[8c5a9fcc0403432c3863f4886b69e6ff]"
-    // val base64Val = "QUM0Y2MyOTRlY2UzMjM4ODY4NmQ4M2FhMzVmOTczMGVkMDpbOGM1YTlmY2MwNDAzNDMyYzM4NjNmNDg4NmI2OWU2ZmZd"
     val headerInjector = Interceptor { chain ->
         return@Interceptor chain.proceed(
             chain.request()
