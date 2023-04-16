@@ -7,3 +7,5 @@
 - [x] room setup for sent sms
 - [x] add KN number to list
 - [ ] unit tests and integration tests
+- [ ] splash screen
+- 

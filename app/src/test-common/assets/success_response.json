@@ -1,0 +1,24 @@
+{
+  "body": "Sent from your Twilio trial account - hello from postman",
+  "num_segments": "1",
+  "direction": "outbound-api",
+  "from": "+16205221109",
+  "date_updated": "Sun, 16 Apr 2023 05:51:47 +0000",
+  "price": null,
+  "error_message": null,
+  "uri": "/2010-04-01/Accounts/AC4cc294ece32388686d83aa35f9730ed0/Messages/SMd91338fd13075d12ae5afa9b2a0183d0.json",
+  "account_sid": "AC4cc294ece32388686d83aa35f9730ed0",
+  "num_media": "0",
+  "to": "+919643957240",
+  "date_created": "Sun, 16 Apr 2023 05:51:47 +0000",
+  "status": "queued",
+  "sid": "SMd91338fd13075d12ae5afa9b2a0183d0",
+  "date_sent": null,
+  "messaging_service_sid": null,
+  "error_code": null,
+  "price_unit": "USD",
+  "api_version": "2010-04-01",
+  "subresource_uris": {
+    "media": "/2010-04-01/Accounts/AC4cc294ece32388686d83aa35f9730ed0/Messages/SMd91338fd13075d12ae5afa9b2a0183d0/Media.json"
+  }
+}
