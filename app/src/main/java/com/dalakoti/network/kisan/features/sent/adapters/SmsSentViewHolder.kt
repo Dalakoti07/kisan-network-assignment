@@ -10,9 +10,9 @@ class SmsSentViewHolder (private val binding: ItemSmsSentBinding): RecyclerView.
     @SuppressLint("SetTextI18n")
     fun setData(smsSentEntity: SmsSentEntity){
         binding.tvInitials.text = (smsSentEntity.sendToName[0]+"").uppercase()
-        binding.tvName.text = smsSentEntity.sendToName
-        binding.tvSId.text = smsSentEntity.sid
+        binding.tvSId.text = smsSentEntity.body
         binding.tvMobile.text = smsSentEntity.mobileNumber
+        binding.tvTime.text = smsSentEntity.dateAndTime
     }
 
 }

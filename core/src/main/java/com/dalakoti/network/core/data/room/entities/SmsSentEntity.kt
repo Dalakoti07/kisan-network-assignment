@@ -19,17 +19,13 @@ data class SmsSentEntity(
     @ColumnInfo(name = "send_to_name")
     val sendToName: String,
 
-    val uri: String
-){
+    val uri: String,
 
-// todo clean this up
-//    fun toDataClass(): SmsSentDataClass{
-//        return SmsSentDataClass(
-//            uid,
-//            sid,
-//            mobileNumber, sendToName, uri
-//        )
-//    }
+    val body: String = "",
+
+    @ColumnInfo(name = "date_and_time")
+    val dateAndTime: String = ""
+){
 
     class DiffUtilCallBack : DiffUtil.ItemCallback<SmsSentEntity>() {
         override fun areItemsTheSame(
@@ -44,14 +40,3 @@ data class SmsSentEntity(
     }
 
 }
-
-// todo clean this up
-//data class SmsSentDataClass(
-//    val uid: Int,
-//    val sid: String,
-//    val mobileNumber: String,
-//    val sendToName: String,
-//    val uri: String
-//) {
-//
-//}

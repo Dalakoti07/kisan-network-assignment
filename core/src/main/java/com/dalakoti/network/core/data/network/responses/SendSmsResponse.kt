@@ -5,5 +5,6 @@ data class SendSmsResponse(
     val body: String,
     val uri: String,
     val to: String,
-    val sid: String
+    val sid: String,
+    val date_created: String,
 )

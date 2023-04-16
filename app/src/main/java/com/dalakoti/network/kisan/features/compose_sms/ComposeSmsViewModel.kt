@@ -81,6 +81,8 @@ class ComposeSmsViewModel @Inject constructor(
                     mobileNumber = smsResponse.to,
                     sendToName = personContact.name,
                     uri = smsResponse.uri,
+                    dateAndTime = smsResponse.date_created,
+                    body = smsResponse.body,
                 )
             )
         }

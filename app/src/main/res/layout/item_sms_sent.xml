@@ -35,27 +35,19 @@
                 android:layout_height="wrap_content"/>
         </FrameLayout>
 
-
-
         <TextView
-            android:id="@+id/tv_name"
-            tools:text="Saurabh Dalakoti"
-            android:textSize="@dimen/text_size_sm"
-            android:layout_marginStart="@dimen/space_md"
-            android:layout_marginTop="@dimen/space_md"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ic_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
+            android:layout_marginStart="10dp"
             android:id="@+id/tv_s_id"
             tools:text="Sent Id"
             android:textSize="@dimen/text_size_xs"
             android:layout_marginTop="@dimen/space_xs"
-            app:layout_constraintTop_toBottomOf="@id/tv_name"
-            app:layout_constraintStart_toStartOf="@id/tv_name"
-            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ic_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="0dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginEnd="@dimen/space_md"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_height="wrap_content"/>
 
         <ImageView
@@ -77,6 +69,16 @@
             android:layout_marginEnd="@dimen/space_md"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_ic_location"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="Sun, 16 Apr 2023 05:51:47 +0000"
+            app:layout_constraintTop_toBottomOf="@id/iv_ic_location"
+            app:layout_constraintStart_toStartOf="@id/iv_ic_location"
+            android:id="@+id/tv_time"
+            android:ellipsize="end"
             android:maxLines="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
