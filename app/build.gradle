@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.20'
+    id 'com.google.devtools.ksp' version '1.6.20-1.0.5'
 }
 
 android {
@@ -48,9 +49,23 @@ android {
             java.srcDirs += "$projectDir/src/test-common/java"
         }
     }
+
+    kotlin {
+        sourceSets.debug {
+            kotlin.srcDirs += 'build/generated/ksp/debug/kotlin'
+        }
+        sourceSets.test {
+            kotlin.srcDirs += 'build/generated/ksp/test/kotlin'
+        }
+        sourceSets.release {
+            kotlin.srcDirs += 'build/generated/ksp/release/kotlin'
+        }
+    }
 }
 
 dependencies {
+    implementation project(":logger") // since you want to use your @Listed annotation
+    ksp project(":logger") // to make KSP work
 
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
