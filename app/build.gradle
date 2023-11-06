@@ -51,14 +51,9 @@ android {
     }
 
     kotlin {
-        sourceSets.debug {
-            kotlin.srcDirs += 'build/generated/ksp/debug/kotlin'
-        }
-        sourceSets.test {
-            kotlin.srcDirs += 'build/generated/ksp/test/kotlin'
-        }
-        sourceSets.release {
-            kotlin.srcDirs += 'build/generated/ksp/release/kotlin'
+        sourceSets {
+            main.kotlin.srcDirs += 'build/generated/ksp/main/kotlin'
+            test.kotlin.srcDirs += 'build/generated/ksp/test/kotlin'
         }
     }
 }

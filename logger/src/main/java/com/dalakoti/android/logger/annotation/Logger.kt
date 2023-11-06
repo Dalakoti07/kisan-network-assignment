@@ -1,5 +1,5 @@
 package com.dalakoti.android.logger.annotation
 
-@Target(AnnotationTarget.CLASS)
+@Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class Logger
+annotation class LogData

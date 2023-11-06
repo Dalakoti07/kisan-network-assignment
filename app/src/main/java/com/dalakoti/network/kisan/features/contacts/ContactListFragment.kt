@@ -2,6 +2,7 @@ package com.dalakoti.network.kisan.features.contacts
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.dalakoti.android.logger.annotation.LogData
 import com.dalakoti.network.core.data.models.Contact
 import com.dalakoti.network.kisan.R
 import com.dalakoti.network.kisan.databinding.FragmentContactListBinding
@@ -35,6 +37,7 @@ class ContactListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        ContactListFragmentEvents.getDefault().register(this)
         _binding = FragmentContactListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,6 +45,7 @@ class ContactListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvAdapter = ContactsAdapter {
+            cardClicked()
             // intent to go to next screen
             val bundle = bundleOf("contact" to it)
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, args = bundle)
@@ -52,6 +56,11 @@ class ContactListFragment : Fragment() {
                 it
             )
         }.launchIn(lifecycleScope)
+    }
+
+    @LogData
+    private fun cardClicked() {
+        println("Inside card clicked ")
     }
 
 }
