@@ -42,9 +42,10 @@ class ContactListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvAdapter = ContactsAdapter {
+            hey()
             // intent to go to next screen
-            val bundle = bundleOf("contact" to it)
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, args = bundle)
+//            val bundle = bundleOf("contact" to it)
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, args = bundle)
         }
         binding.rvContacts.adapter = rvAdapter
         viewModel.contactList.onEach {
@@ -52,6 +53,10 @@ class ContactListFragment : Fragment() {
                 it
             )
         }.launchIn(lifecycleScope)
+    }
+
+    private fun hey(){
+
     }
 
 }
