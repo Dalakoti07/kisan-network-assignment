@@ -5,7 +5,9 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-//        classpath "org.jetbrains.kotlin:kotlin-serialization:1.7.10"
+
+        classpath "com.ibotta:plugin:1.4.1"
+
     }
 }
 
